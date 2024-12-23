@@ -1,0 +1,107 @@
+:root {
+    --snowflake-color: linear-gradient(#fff, #ca9ee6);
+--bg-color: #303446;
+--text-color: #c6d0f5;
+--fg-color: #ca9ee6;
+--fg-color-d: #b469e2;
+}
+body,html {
+    height: 101vh;
+    color: var(--text-color);
+}
+/* 
+body {
+    margin: 0;
+    overflow: hidden;
+    height: 100vh;
+  }
+  */
+  .snowflake-container {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    z-index: 99;
+  }
+  
+  .snowflake {
+    position: absolute;
+    top: -10px;
+    font-size: 1.5rem;
+    color: var(--snowflake-color);
+    animation: fall 5s linear infinite, sway 3s ease-in-out infinite;
+    opacity: 0.75;
+  }
+  
+  @keyframes fall {
+    0% {
+      transform: translateY(-1000%);
+    }
+    100% {
+      transform: translateY(110%);
+    }
+  }
+  
+  @keyframes sway {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(20px);
+    }
+  }
+  
+  .snowflake:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+  }
+  
+  .snowflake:nth-child(2) {
+    left: 25%;
+    animation-delay: 1s;
+  }
+  
+  .snowflake:nth-child(3) {
+    left: 50%;
+    animation-delay: 2s;
+  }
+  
+  .snowflake:nth-child(4) {
+    left: 75%;
+    animation-delay: 3s;
+  }
+  
+  .snowflake:nth-child(5) {
+    left: 90%;
+    animation-delay: 4s;
+  }
+  
+  .center {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  img {
+    border: var(--fg-color) solid 3px;
+    border-radius: 10%;
+  }
+
+  #tsparticles {
+    position: fixed; /* Ensures it stays in the background */
+    top: 0;
+    background: linear-gradient(var(--fg-color-d), #036ac4);
+
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Push it behind all other elements */
+  }
+  hr{
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid var(--fg-color);
+    margin: 1em 0;
+    padding: 0;
+  }
